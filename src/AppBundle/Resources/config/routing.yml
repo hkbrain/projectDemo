@@ -1,0 +1,7 @@
+app_blogpost:
+    resource: "@AppBundle/Resources/config/routing/blogpost.yml"
+    prefix:   /blogpost
+
+app_blogcomment:
+    resource: "@AppBundle/Resources/config/routing/blogcomment.yml"
+    prefix:   /blogcomment
