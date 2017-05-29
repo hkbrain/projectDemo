@@ -12,10 +12,6 @@ node {
         sh 'vendor/bin/phpunit --testsuite Unit --coverage-html unit-tests/'
         publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'unit-tests', reportFiles: 'index.html', reportName: 'Unit Tests Report', reportTitles: ''])
     }
-    stage("Dev_deploy") {
-        // Run PHPUnit
-        sh returnStdout: true, script: 'cd /home/himanshu-koshti/html/jk_deply/projectDemo-Dev && git pull'
-    }
    
     
     
