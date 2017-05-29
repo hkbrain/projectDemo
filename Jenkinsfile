@@ -1,7 +1,7 @@
 node { 
-    stage("Dev_get_code"){
-        git url: 'https://github.com/hkbrain/projectDemo.git', branch: 'dev'
-    }
+#    stage("Dev_get_code"){
+#        git url: 'https://github.com/hkbrain/projectDemo.git', branch: 'dev'
+#    }
     
     stage("Dev_composer_install") {
         // Run `composer update` as a shell script
