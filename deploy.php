@@ -25,7 +25,7 @@ host('project.com')
 host('localhost')
     ->stage('beta')
     ->user('deployer')
-    ->set('deploy_path', '/home/himanshu-koshti/html/jk_deply/projectDemo-Stag');
+    ->set('deploy_path', '/home/deployer/html/jk_deply/projectDemo-Stag');
 
 
 // Tasks
