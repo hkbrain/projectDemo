@@ -5,7 +5,7 @@ require 'recipe/symfony.php';
 
 // Configuration
 set('ssh_type', 'ext-ssh2');
-set('ssh_multiplexing', true);
+//set('ssh_multiplexing', true);
 set('repository', 'https://github.com/hkbrain/projectDemo.git');
 set('git_tty', true); // [Optional] Allocate tty for git on first deployment
 set('shared_dirs', ['var/logs', 'var/sessions']);
