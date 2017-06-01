@@ -4,8 +4,8 @@ namespace Deployer;
 require 'recipe/symfony.php';
 
 // Configuration
-set('ssh_type', 'ext-ssh2');
-//set('ssh_multiplexing', true);
+set('ssh_type', 'native');
+set('ssh_multiplexing', true);
 set('repository', 'https://github.com/hkbrain/projectDemo.git');
 set('git_tty', true); // [Optional] Allocate tty for git on first deployment
 set('shared_dirs', ['var/logs', 'var/sessions']);
@@ -17,15 +17,21 @@ set('var_dir', 'var');
 
 
 // Hosts
-
-host('project.com')
+server('prod','localhost')
     ->stage('production')
     ->set('deploy_path', '/home/himanshu-koshti/html/jk_deply/projectDemo-Prod');
 
-host('localhost')
-    ->stage('beta')
+server('stag','localhost')
+    ->stage('stag')
     ->user('deployer')
+        ->identityFile('~/.ssh/id_rsa.pub', '~/.ssh/id_rsa', null)
     ->set('deploy_path', '/home/deployer/html/jk_deply/projectDemo-Stag');
+
+server('dev','localhost')
+    ->stage('demo')
+    ->user('deployer')
+        ->identityFile('~/.ssh/id_rsa.pub', '~/.ssh/id_rsa', null)
+    ->set('deploy_path', '/home/deployer/html/jk_deply/projectDemo-Dev');
 
 
 // Tasks
