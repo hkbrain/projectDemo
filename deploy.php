@@ -21,7 +21,7 @@ server('prod','localhost')
     ->stage('production')
 ->user('deployer')
         ->identityFile('~/.ssh/id_rsa.pub', '~/.ssh/id_rsa', null)
-    ->set('deploy_path', '/home/himanshu-koshti/html/jk_deply/projectDemo-Prod');
+    ->set('deploy_path', '/home/deployer/html/jk_deply/projectDemo-Prod');
 
 server('stag','localhost')
     ->stage('stag')
