@@ -19,6 +19,8 @@ set('var_dir', 'var');
 // Hosts
 server('prod','localhost')
     ->stage('production')
+->user('deployer')
+        ->identityFile('~/.ssh/id_rsa.pub', '~/.ssh/id_rsa', null)
     ->set('deploy_path', '/home/himanshu-koshti/html/jk_deply/projectDemo-Prod');
 
 server('stag','localhost')
